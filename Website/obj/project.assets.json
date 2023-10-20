@@ -743,11 +743,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/System/Volumes/Data/Previous Content/Data/My-New-Website/khizooo-web-core3.1/WEB/Website/Website.csproj",
+      "projectUniqueName": "/System/Volumes/Data/Previous Content/Data/My-New-Website/khizooo-web-core3.1/Website/Website.csproj",
       "projectName": "Website",
-      "projectPath": "/System/Volumes/Data/Previous Content/Data/My-New-Website/khizooo-web-core3.1/WEB/Website/Website.csproj",
+      "projectPath": "/System/Volumes/Data/Previous Content/Data/My-New-Website/khizooo-web-core3.1/Website/Website.csproj",
       "packagesPath": "/Users/khizooo/.nuget/packages/",
-      "outputPath": "/System/Volumes/Data/Previous Content/Data/My-New-Website/khizooo-web-core3.1/WEB/Website/obj/",
+      "outputPath": "/System/Volumes/Data/Previous Content/Data/My-New-Website/khizooo-web-core3.1/Website/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/khizooo/.nuget/NuGet/NuGet.Config"
