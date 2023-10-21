@@ -21,10 +21,16 @@ jobs:
       with:
         dotnet-version: 3.1.426
 
+    - name: Restore .NET Core project
+      run: dotnet restore Website/Website.csproj
+      working-directory: Website  # Adjust to your project folder
+
     - name: Build and Publish
       run: |
-          dotnet publish -c Release -o ./publish
-      working-directory: Website  # This is your app folder name
+        dotnet publish -c Release -o ./publish
+      working-directory: Website
+      env:
+        MSBUILDDIAGNOSTICS: 1  # Add this line to enable detailed diagnostics
 
     - name: Configure Git
       run: |
