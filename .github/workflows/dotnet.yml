@@ -22,7 +22,7 @@ jobs:
         run: |
           cd ../Website
           dotnet build
-        working-directory: ../Website
+        working-directory: Website
 
       - name: Publish
         run: |
