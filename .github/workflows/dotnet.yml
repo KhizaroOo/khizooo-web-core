@@ -1,29 +1,43 @@
-# This workflow will build a .NET project
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
-
-name: .NET
+name: Website Deployment
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    branches:
+      - main  # Adjust to your main branch
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v3
-      with:
-        dotnet-version: 3.1.426
+      - name: Checkout Code
+        uses: actions/checkout@v2
 
-    - name: Build and Publish
-      run: |
-        dotnet publish -c Release -o ../publish
-      working-directory: Website
-      env:
-        MSBUILDDIAGNOSTICS: 1  # Add this line to enable detailed diagnostics # -c Release -o publish
+      - name: Setup
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 3.1.426  # Replace with your .NET Core version
+
+      - name: Build
+        run: |
+          cd Website
+          dotnet build
+        working-directory: Website
+
+      - name: Publish
+        run: |
+          cd Website
+          dotnet publish -c Release -o ../../publish
+        working-directory: Website
+
+      - name: Deployment
+        run: |
+          cd ../../publish
+          git init
+          git add .
+          git commit -m "Deployment"
+          git branch -M gh-pages
+          git remote add origin https://github.com:KhizaroOo/khizooo-web-core3.1.git
+          git push -f -u origin gh-pages
+        working-directory: publish
+
