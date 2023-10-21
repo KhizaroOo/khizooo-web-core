@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="../build/Umbraco.TEST01.props" />
-</Project>
