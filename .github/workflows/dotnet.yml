@@ -21,15 +21,9 @@ jobs:
       with:
         dotnet-version: 3.1.426
 
-    - name: Build and publish
+    - name: Build and Publish
       run: |
         dotnet publish -c Release -o publish
-      working-directory: Website  # Replace with your project folder
-
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-        publish_dir: ./Website/publish  # Adjust this path to your publish folder
-        publish_branch: gh-pages
-        # cname: khizooo.com  # Replace with your custom domain (if applicable)
+      working-directory: Website
+      env:
+        MSBUILDDIAGNOSTICS: 1  # Add this line to enable detailed diagnostics
