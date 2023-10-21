@@ -21,28 +21,9 @@ jobs:
       with:
         dotnet-version: 3.1.426
 
-    - name: Restore .NET Core project
-      run: dotnet restore Website/Website.csproj
-      working-directory: Website  # Adjust to your project folder
-
     - name: Build and Publish
       run: |
-        dotnet publish -c Release -o ./publish
+        dotnet publish -c Release -o publish
       working-directory: Website
       env:
         MSBUILDDIAGNOSTICS: 1  # Add this line to enable detailed diagnostics
-
-    - name: Configure Git
-      run: |
-          git config --global user.email "khizar.imtiaz@gmail.com"
-          git config --global user.name "KhizaroOo"
-
-    - name: Deploy to GitHub Pages
-      run: |
-          cd ./publish
-          git init
-          git add .
-          git commit -m "Deploy to GitHub Pages"
-          git branch -M gh-pages
-          git remote add origin https://github.com/KhizaroOo/khizooo-web-core3.1.git
-          git push -f -u origin gh-pages
