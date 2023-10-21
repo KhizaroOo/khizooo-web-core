@@ -4,27 +4,22 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.Umbraco.TEST01 PreferredExecutionTarget="/Volumes/Untitled - Data/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.ItemProperties.Website PreferredExecutionTarget="/Volumes/Untitled - Data/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Website/Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../../../../../../Previous Content/Data/My-New-Website/khizooo-web-core3.1/publish/khizooo.txt">
     <Files>
-      <File FileName="Website/Pages/Index.cshtml" Line="9" Column="84" />
+      <File FileName="Website/Pages/Index.cshtml" Line="9" Column="69" />
       <File FileName="Website/Program.cs" Line="28" Column="1" />
+      <File FileName="khizooo.txt" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="WEB" expanded="True">
-            <Node name="Website" expanded="True" selected="True">
-              <Node name="Dependencies" expanded="True">
-                <Node name="FrameworkReferences" expanded="True" />
-                <Node name="PackageDependencies" expanded="True" />
-              </Node>
-              <Node name="Pages" expanded="True" />
-            </Node>
-          </Node>
+          <Node name="WEB" expanded="True" selected="True" />
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.Breakpoints />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
