@@ -20,13 +20,13 @@ jobs:
 
       - name: Build
         run: |
-          cd Website
+          cd ../Website
           dotnet build
-        working-directory: Website
+        working-directory: ../Website
 
       - name: Publish
         run: |
-          cd Website
+          cd ../Website
           dotnet publish -c Release -o ../../publish
         working-directory: Website
 
