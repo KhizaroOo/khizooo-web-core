@@ -23,7 +23,7 @@ jobs:
 
     - name: Build and Publish
       run: |
-        dotnet publish 
+        dotnet publish -c Release -o ../publish
       working-directory: Website
       env:
         MSBUILDDIAGNOSTICS: 1  # Add this line to enable detailed diagnostics # -c Release -o publish
