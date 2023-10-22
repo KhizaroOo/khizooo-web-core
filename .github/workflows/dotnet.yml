@@ -18,25 +18,8 @@ jobs:
         with:
           dotnet-version: 3.1.426  # Replace with your .NET Core version
 
-      - name: Build and Publish Static Assets
+      - name: Build and Publish ASP.NET Core App
         run: |
-          # Build your ASP.NET Core app to generate static assets (e.g., in wwwroot)
           dotnet build
           dotnet publish -c Release -o ./publish
         working-directory: Website  # Specify your project folder
-
-      - name: Deploy to GitHub Pages
-        run: |
-          git config --global user.email "khizar.imtiaz@gmail.com"
-          git config --global user.name "KhizaroOo"
-          cd ./Website/wwwroot  # Path to your static content
-
-          git init
-          git add .
-          git commit -m "Deploy to GitHub Pages"
-          git branch -M gh-pages
-          git remote add origin https://github.com/KhizaroOo/khizooo-web-core3.1.git
-          git push -f -u origin gh-pages
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
