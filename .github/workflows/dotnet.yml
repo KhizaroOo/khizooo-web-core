@@ -39,7 +39,7 @@ jobs:
           git add .
           git commit -m "Deployment"
           git branch -M gh-pages
-          git remote add origin https://github.com/KhizaroOo/khizooo-web-core3.1
+          git remote add origin https://github.com/KhizaroOo/khizooo-web-core3.1.git
           git push -f -u origin gh-pages
         working-directory: publish
 
