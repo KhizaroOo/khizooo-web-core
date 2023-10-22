@@ -11,35 +11,32 @@ jobs:
 
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
 
       - name: Setup
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: 3.1.426  # Replace with your .NET Core version
 
-      - name: Build
+      - name: Build and Publish Static Assets
         run: |
-          cd ../Website
+          # Build your ASP.NET Core app to generate static assets (e.g., in wwwroot)
           dotnet build
-        working-directory: Website
+          dotnet publish -c Release -o ./publish
+        working-directory: Website  # Specify your project folder
 
-      - name: Publish
+      - name: Deploy to GitHub Pages
         run: |
-          cd ../Website
-          dotnet publish -c Release -o ../../publish
-        working-directory: Website
-
-      - name: Deployment
-        run: |
-          cd ../../publish
           git config --global user.email "khizar.imtiaz@gmail.com"
           git config --global user.name "KhizaroOo"
+          cd ./Website/wwwroot  # Path to your static content
+
           git init
           git add .
-          git commit -m "Deployment"
+          git commit -m "Deploy to GitHub Pages"
           git branch -M gh-pages
           git remote add origin https://github.com/KhizaroOo/khizooo-web-core3.1.git
           git push -f -u origin gh-pages
-        working-directory: publish
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
